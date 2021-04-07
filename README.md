@@ -16,7 +16,7 @@ WHERE staff_id = 1 OR staff_id = 2
 GROUP BY month
 ORDER BY month;
 ```
-Alternative
+Alternative that I liked done by other user
 ```
 SELECT
   EXTRACT(MONTH FROM payment_date)        AS month,
