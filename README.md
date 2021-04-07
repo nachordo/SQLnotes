@@ -36,10 +36,10 @@ SELECT player_name, games,
     CAST( ROUND( CAST(CAST(hits AS FLOAT) / CAST(at_bats AS FLOAT) as numeric) ,3)  as varchar)
     AS batting_average
 FROM yankees
-WHERE at_bats > 100
+WHERE at_bats >= 100
 ORDER BY batting_average DESC;
 ```
-Alternative that I liked done by other user
+Alternatives that I liked done by other users
 ```
 select player_name,
        games,
@@ -47,4 +47,9 @@ select player_name,
 from yankees
 where at_bats > 100
 order by 3 desc
+
+SELECT player_name, games, to_char(hits/at_bats::real, 'FM0D000') as batting_average
+FROM yankees
+WHERE at_bats >= 100
+ORDER BY batting_average DESC
 ```
