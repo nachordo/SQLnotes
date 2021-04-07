@@ -33,7 +33,7 @@ ORDER BY month;
 - Kata: https://www.codewars.com/kata/5994dafcbddc2f116d000024/train/sql
 ```
 SELECT player_name, games, 
-    CAST( ROUND( CAST(CAST(hits AS FLOAT) / CAST(at_bats AS FLOAT) as numeric) ,3)  as varchar)
+    CAST( ROUND( CAST(hits AS numeric) / at_bats  ,3)  as varchar)
     AS batting_average
 FROM yankees
 WHERE at_bats >= 100
