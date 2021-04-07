@@ -30,3 +30,21 @@ FROM payment
 GROUP BY month
 ORDER BY month;
 ```
+- Kata: https://www.codewars.com/kata/5994dafcbddc2f116d000024/train/sql
+```
+SELECT player_name, games, 
+    CAST( ROUND( CAST(CAST(hits AS FLOAT) / CAST(at_bats AS FLOAT) as numeric) ,3)  as varchar)
+    AS batting_average
+FROM yankees
+WHERE at_bats > 100
+ORDER BY batting_average DESC;
+```
+Alternative that I liked done by other user
+```
+select player_name,
+       games,
+       round(hits::numeric / at_bats, 3)::text as batting_average
+from yankees
+where at_bats > 100
+order by 3 desc
+```
